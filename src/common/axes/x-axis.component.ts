@@ -64,7 +64,7 @@ export class XAxisComponent implements OnChanges {
   stroke: string = 'stroke';
   tickStroke: string = '#ccc';
   strokeWidth: string = 'none';
-  xAxisOffset: number = -40;
+  xAxisOffset: number = -50;
 
   @ViewChild(XAxisTicksComponent) ticksComponent: XAxisTicksComponent;
 
