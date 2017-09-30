@@ -6,19 +6,19 @@ var XAxisComponent = /** @class */ (function () {
         this.xOrient = 'bottom';
         this.dimensionsChanged = new EventEmitter();
         this.xAxisClassName = 'x axis';
-        this.labelOffset = 0;
+        this.labelOffset = 15;
         this.fill = 'none';
         this.stroke = 'stroke';
         this.tickStroke = '#ccc';
         this.strokeWidth = 'none';
-        this.xAxisOffset = 5;
+        this.xAxisOffset = -30;
     }
     XAxisComponent.prototype.ngOnChanges = function (changes) {
         this.update();
     };
     XAxisComponent.prototype.update = function () {
         if (this.xOrient === 'top') {
-            this.transform = "translate(0," + this.xAxisOffset + " - 35)";
+            this.transform = "translate(0," + this.xAxisOffset + ")";
             this.labelOffset = 65;
         }
         else {

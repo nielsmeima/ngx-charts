@@ -59,12 +59,12 @@ export class XAxisComponent implements OnChanges {
 
   tickArguments: any;
   transform: any;
-  labelOffset: number = 0;
+  labelOffset: number = 15;
   fill: string = 'none';
   stroke: string = 'stroke';
   tickStroke: string = '#ccc';
   strokeWidth: string = 'none';
-  xAxisOffset: number = 5;
+  xAxisOffset: number = -30;
 
   @ViewChild(XAxisTicksComponent) ticksComponent: XAxisTicksComponent;
 
@@ -74,7 +74,7 @@ export class XAxisComponent implements OnChanges {
 
   update(): void {
     if(this.xOrient === 'top') {
-      this.transform = `translate(0,${this.xAxisOffset} - 35)`;
+      this.transform = `translate(0,${this.xAxisOffset})`;
       this.labelOffset = 65;
     } else {
       this.transform = `translate(0,${this.xAxisOffset + this.dims.height})`;
