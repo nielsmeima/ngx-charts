@@ -4,7 +4,7 @@ import { select } from 'd3-selection';
 import { invertColor } from '../utils/color-utils';
 import { trimLabel } from '../common/trim-label.helper';
 import { id } from '../utils/id';
-var TreeMapCellComponent = (function () {
+var TreeMapCellComponent = /** @class */ (function () {
     function TreeMapCellComponent(element, location) {
         this.location = location;
         this.gradient = false;
@@ -79,34 +79,34 @@ var TreeMapCellComponent = (function () {
             }
         ];
     };
+    TreeMapCellComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'g[ngx-charts-tree-map-cell]',
+                    template: "\n    <svg:g>\n      <defs *ngIf=\"gradient\">\n        <svg:g ngx-charts-svg-linear-gradient\n          orientation=\"vertical\"\n          [name]=\"gradientId\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:rect\n        [attr.fill]=\"gradient ? gradientUrl : fill\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        [style.cursor]=\"'pointer'\"\n        class=\"cell\"\n        (click)=\"onClick()\"\n      />\n      <svg:foreignObject\n        *ngIf=\"width >= 70 && height >= 35\"\n        [attr.x]=\"x\"\n        [attr.y]=\"y\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        class=\"label\"\n        [style.pointer-events]=\"'none'\">\n        <xhtml:p\n          [style.color]=\"getTextColor()\"\n          [style.height]=\"height + 'px'\"\n          [style.width]=\"width + 'px'\">\n          <xhtml:span class=\"treemap-label\" [innerHTML]=\"formattedLabel\">\n          </xhtml:span>\n          <xhtml:br />\n          <xhtml:span \n            class=\"treemap-val\" \n            ngx-charts-count-up \n            [countTo]=\"value\"\n            [valueFormatting]=\"valueFormatting\">\n          </xhtml:span>\n        </xhtml:p>\n      </svg:foreignObject>\n    </svg:g>\n  ",
+                    changeDetection: ChangeDetectionStrategy.OnPush
+                },] },
+    ];
+    /** @nocollapse */
+    TreeMapCellComponent.ctorParameters = function () { return [
+        { type: ElementRef, },
+        { type: LocationStrategy, },
+    ]; };
+    TreeMapCellComponent.propDecorators = {
+        'data': [{ type: Input },],
+        'fill': [{ type: Input },],
+        'x': [{ type: Input },],
+        'y': [{ type: Input },],
+        'width': [{ type: Input },],
+        'height': [{ type: Input },],
+        'label': [{ type: Input },],
+        'value': [{ type: Input },],
+        'valueType': [{ type: Input },],
+        'valueFormatting': [{ type: Input },],
+        'labelFormatting': [{ type: Input },],
+        'gradient': [{ type: Input },],
+        'select': [{ type: Output },],
+    };
     return TreeMapCellComponent;
 }());
 export { TreeMapCellComponent };
-TreeMapCellComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'g[ngx-charts-tree-map-cell]',
-                template: "\n    <svg:g>\n      <defs *ngIf=\"gradient\">\n        <svg:g ngx-charts-svg-linear-gradient\n          orientation=\"vertical\"\n          [name]=\"gradientId\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:rect\n        [attr.fill]=\"gradient ? gradientUrl : fill\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        [style.cursor]=\"'pointer'\"\n        class=\"cell\"\n        (click)=\"onClick()\"\n      />\n      <svg:foreignObject\n        *ngIf=\"width >= 70 && height >= 35\"\n        [attr.x]=\"x\"\n        [attr.y]=\"y\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        class=\"label\"\n        [style.pointer-events]=\"'none'\">\n        <xhtml:p\n          [style.color]=\"getTextColor()\"\n          [style.height]=\"height + 'px'\"\n          [style.width]=\"width + 'px'\">\n          <xhtml:span class=\"treemap-label\" [innerHTML]=\"formattedLabel\">\n          </xhtml:span>\n          <xhtml:br />\n          <xhtml:span \n            class=\"treemap-val\" \n            ngx-charts-count-up \n            [countTo]=\"value\"\n            [valueFormatting]=\"valueFormatting\">\n          </xhtml:span>\n        </xhtml:p>\n      </svg:foreignObject>\n    </svg:g>\n  ",
-                changeDetection: ChangeDetectionStrategy.OnPush
-            },] },
-];
-/** @nocollapse */
-TreeMapCellComponent.ctorParameters = function () { return [
-    { type: ElementRef, },
-    { type: LocationStrategy, },
-]; };
-TreeMapCellComponent.propDecorators = {
-    'data': [{ type: Input },],
-    'fill': [{ type: Input },],
-    'x': [{ type: Input },],
-    'y': [{ type: Input },],
-    'width': [{ type: Input },],
-    'height': [{ type: Input },],
-    'label': [{ type: Input },],
-    'value': [{ type: Input },],
-    'valueType': [{ type: Input },],
-    'valueFormatting': [{ type: Input },],
-    'labelFormatting': [{ type: Input },],
-    'gradient': [{ type: Input },],
-    'select': [{ type: Output },],
-};
 //# sourceMappingURL=tree-map-cell.component.js.map

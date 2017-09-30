@@ -35,7 +35,6 @@ export declare class PolarChartComponent extends BaseChartComponent {
     yScale: any;
     xScale: any;
     yAxisScale: any;
-    any: any;
     colors: ColorHelper;
     scaleType: string;
     transform: string;

@@ -3,7 +3,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { radialLine } from 'd3-shape';
 import { id } from '../utils/id';
 import { sortLinear, sortByTime, sortByDomain } from '../utils/sort';
-var PolarSeriesComponent = (function () {
+var PolarSeriesComponent = /** @class */ (function () {
     function PolarSeriesComponent(location) {
         this.location = location;
         this.tooltipDisabled = false;
@@ -115,33 +115,33 @@ var PolarSeriesComponent = (function () {
             this.gradientStops = undefined;
         }
     };
+    PolarSeriesComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'g[ngx-charts-polar-series]',
+                    template: "\n    <svg:g class=\"polar-charts-series\">\n      <defs>\n        <svg:g ngx-charts-svg-radial-gradient *ngIf=\"hasGradient\"\n          orientation=\"vertical\"\n          [color]=\"seriesColor\"\n          [name]=\"gradientId\"\n          [startOpacity]=\"0.25\"\n          [endOpacity]=\"1\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:g ngx-charts-line\n        class=\"polar-series-path\"\n        [path]=\"path\"\n        [stroke]=\"hasGradient ? gradientUrl : seriesColor\"\n        [class.active]=\"active\"\n        [class.inactive]=\"inactive\"\n        [attr.fill-opacity]=\"rangeFillOpacity\"\n        [fill]=\"hasGradient ? gradientUrl : seriesColor\"\n      />\n      <svg:g ngx-charts-circle\n        *ngFor=\"let circle of circles\"\n        class=\"circle\"\n        [cx]=\"circle.cx\"\n        [cy]=\"circle.cy\"\n        [r]=\"circleRadius\"\n        [fill]=\"circle.color\"\n        [style.opacity]=\"inactive ? 0.2 : 1\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        tooltipType=\"tooltip\"\n        [tooltipTitle]=\"tooltipTemplate ? undefined : tooltipText(circle)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"circle.data\">\n      </svg:g>\n    </svg:g>\n  ",
+                    changeDetection: ChangeDetectionStrategy.OnPush
+                },] },
+    ];
+    /** @nocollapse */
+    PolarSeriesComponent.ctorParameters = function () { return [
+        { type: LocationStrategy, },
+    ]; };
+    PolarSeriesComponent.propDecorators = {
+        'name': [{ type: Input },],
+        'data': [{ type: Input },],
+        'xScale': [{ type: Input },],
+        'yScale': [{ type: Input },],
+        'colors': [{ type: Input },],
+        'scaleType': [{ type: Input },],
+        'curve': [{ type: Input },],
+        'activeEntries': [{ type: Input },],
+        'rangeFillOpacity': [{ type: Input },],
+        'tooltipDisabled': [{ type: Input },],
+        'tooltipText': [{ type: Input },],
+        'gradient': [{ type: Input },],
+        'tooltipTemplate': [{ type: Input },],
+    };
     return PolarSeriesComponent;
 }());
 export { PolarSeriesComponent };
-PolarSeriesComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'g[ngx-charts-polar-series]',
-                template: "\n    <svg:g class=\"polar-charts-series\">\n      <defs>\n        <svg:g ngx-charts-svg-radial-gradient *ngIf=\"hasGradient\"\n          orientation=\"vertical\"\n          [color]=\"seriesColor\"\n          [name]=\"gradientId\"\n          [startOpacity]=\"0.25\"\n          [endOpacity]=\"1\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:g ngx-charts-line\n        class=\"polar-series-path\"\n        [path]=\"path\"\n        [stroke]=\"hasGradient ? gradientUrl : seriesColor\"\n        [class.active]=\"active\"\n        [class.inactive]=\"inactive\"\n        [attr.fill-opacity]=\"rangeFillOpacity\"\n        [fill]=\"hasGradient ? gradientUrl : seriesColor\"\n      />\n      <svg:g ngx-charts-circle\n        *ngFor=\"let circle of circles\"\n        class=\"circle\"\n        [cx]=\"circle.cx\"\n        [cy]=\"circle.cy\"\n        [r]=\"circleRadius\"\n        [fill]=\"circle.color\"\n        [style.opacity]=\"inactive ? 0.2 : 1\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        tooltipType=\"tooltip\"\n        [tooltipTitle]=\"tooltipTemplate ? undefined : tooltipText(circle)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"circle.data\">\n      </svg:g>\n    </svg:g>\n  ",
-                changeDetection: ChangeDetectionStrategy.OnPush
-            },] },
-];
-/** @nocollapse */
-PolarSeriesComponent.ctorParameters = function () { return [
-    { type: LocationStrategy, },
-]; };
-PolarSeriesComponent.propDecorators = {
-    'name': [{ type: Input },],
-    'data': [{ type: Input },],
-    'xScale': [{ type: Input },],
-    'yScale': [{ type: Input },],
-    'colors': [{ type: Input },],
-    'scaleType': [{ type: Input },],
-    'curve': [{ type: Input },],
-    'activeEntries': [{ type: Input },],
-    'rangeFillOpacity': [{ type: Input },],
-    'tooltipDisabled': [{ type: Input },],
-    'tooltipText': [{ type: Input },],
-    'gradient': [{ type: Input },],
-    'tooltipTemplate': [{ type: Input },],
-};
 //# sourceMappingURL=polar-series.component.js.map

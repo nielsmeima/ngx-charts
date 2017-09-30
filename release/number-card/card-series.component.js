@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, NgZone } from '@angular/core';
 import { invertColor } from '../utils/color-utils';
-var CardSeriesComponent = (function () {
+var CardSeriesComponent = /** @class */ (function () {
     function CardSeriesComponent(zone) {
         this.zone = zone;
         this.innerPadding = 15;
@@ -71,32 +71,32 @@ var CardSeriesComponent = (function () {
     CardSeriesComponent.prototype.onClick = function (data) {
         this.select.emit(data);
     };
+    CardSeriesComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'g[ngx-charts-card-series]',
+                    template: "\n    <svg:rect\n      *ngFor=\"let c of emptySlots; trackBy:trackBy\"\n      class=\"card-empty\"\n      [attr.x]=\"c.x\"\n      [attr.y]=\"c.y\"\n      [style.fill]=\"emptyColor\"\n      [attr.width]=\"c.width\"\n      [attr.height]=\"c.height\"\n      rx=\"3\"\n      ry=\"3\"\n    />\n    <svg:g ngx-charts-card *ngFor=\"let c of cards; trackBy:trackBy\"\n      [x]=\"c.x\"\n      [y]=\"c.y\"\n      [width]=\"c.width\"\n      [height]=\"c.height\"\n      [color]=\"c.color\"\n      [bandColor]=\"c.bandColor\"\n      [textColor]=\"c.textColor\"\n      [data]=\"c.data\"\n      [medianSize]=\"medianSize\"\n      [valueFormatting]=\"valueFormatting\"\n      [labelFormatting]=\"labelFormatting\"\n      (select)=\"onClick($event)\"\n    />\n  ",
+                    changeDetection: ChangeDetectionStrategy.OnPush
+                },] },
+    ];
+    /** @nocollapse */
+    CardSeriesComponent.ctorParameters = function () { return [
+        { type: NgZone, },
+    ]; };
+    CardSeriesComponent.propDecorators = {
+        'data': [{ type: Input },],
+        'slots': [{ type: Input },],
+        'dims': [{ type: Input },],
+        'colors': [{ type: Input },],
+        'innerPadding': [{ type: Input },],
+        'cardColor': [{ type: Input },],
+        'bandColor': [{ type: Input },],
+        'emptyColor': [{ type: Input },],
+        'textColor': [{ type: Input },],
+        'valueFormatting': [{ type: Input },],
+        'labelFormatting': [{ type: Input },],
+        'select': [{ type: Output },],
+    };
     return CardSeriesComponent;
 }());
 export { CardSeriesComponent };
-CardSeriesComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'g[ngx-charts-card-series]',
-                template: "\n    <svg:rect\n      *ngFor=\"let c of emptySlots; trackBy:trackBy\"\n      class=\"card-empty\"\n      [attr.x]=\"c.x\"\n      [attr.y]=\"c.y\"\n      [style.fill]=\"emptyColor\"\n      [attr.width]=\"c.width\"\n      [attr.height]=\"c.height\"\n      rx=\"3\"\n      ry=\"3\"\n    />\n    <svg:g ngx-charts-card *ngFor=\"let c of cards; trackBy:trackBy\"\n      [x]=\"c.x\"\n      [y]=\"c.y\"\n      [width]=\"c.width\"\n      [height]=\"c.height\"\n      [color]=\"c.color\"\n      [bandColor]=\"c.bandColor\"\n      [textColor]=\"c.textColor\"\n      [data]=\"c.data\"\n      [medianSize]=\"medianSize\"\n      [valueFormatting]=\"valueFormatting\"\n      [labelFormatting]=\"labelFormatting\"\n      (select)=\"onClick($event)\"\n    />\n  ",
-                changeDetection: ChangeDetectionStrategy.OnPush
-            },] },
-];
-/** @nocollapse */
-CardSeriesComponent.ctorParameters = function () { return [
-    { type: NgZone, },
-]; };
-CardSeriesComponent.propDecorators = {
-    'data': [{ type: Input },],
-    'slots': [{ type: Input },],
-    'dims': [{ type: Input },],
-    'colors': [{ type: Input },],
-    'innerPadding': [{ type: Input },],
-    'cardColor': [{ type: Input },],
-    'bandColor': [{ type: Input },],
-    'emptyColor': [{ type: Input },],
-    'textColor': [{ type: Input },],
-    'valueFormatting': [{ type: Input },],
-    'labelFormatting': [{ type: Input },],
-    'select': [{ type: Output },],
-};
 //# sourceMappingURL=card-series.component.js.map

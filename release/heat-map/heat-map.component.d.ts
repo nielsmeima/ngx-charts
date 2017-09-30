@@ -11,6 +11,7 @@ export declare class HeatMapComponent extends BaseChartComponent {
     showYAxisLabel: any;
     xAxisLabel: any;
     yAxisLabel: any;
+    xAxisOrient: any;
     gradient: boolean;
     innerPadding: number | number[];
     xAxisTickFormatting: any;

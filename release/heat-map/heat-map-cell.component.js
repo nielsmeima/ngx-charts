@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, ElementRef, ChangeDetectionStra
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { select } from 'd3-selection';
 import { id } from '../utils/id';
-var HeatMapCellComponent = (function () {
+var HeatMapCellComponent = /** @class */ (function () {
     function HeatMapCellComponent(element, location) {
         this.location = location;
         this.gradient = false;
@@ -47,30 +47,30 @@ var HeatMapCellComponent = (function () {
     HeatMapCellComponent.prototype.onClick = function () {
         this.select.emit(this.data);
     };
+    HeatMapCellComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'g[ngx-charts-heat-map-cell]',
+                    template: "\n    <svg:g [attr.transform]=\"transform\" class=\"cell\">\n      <defs *ngIf=\"gradient\">\n        <svg:g ngx-charts-svg-linear-gradient\n          orientation=\"vertical\"\n          [name]=\"gradientId\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:rect\n        [attr.fill]=\"gradient ? gradientUrl : fill\"\n        rx=\"3\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        class=\"cell\"\n        style=\"cursor: pointer\"\n        (click)=\"onClick()\"\n      />\n    </svg:g>\n  ",
+                    changeDetection: ChangeDetectionStrategy.OnPush
+                },] },
+    ];
+    /** @nocollapse */
+    HeatMapCellComponent.ctorParameters = function () { return [
+        { type: ElementRef, },
+        { type: LocationStrategy, },
+    ]; };
+    HeatMapCellComponent.propDecorators = {
+        'fill': [{ type: Input },],
+        'x': [{ type: Input },],
+        'y': [{ type: Input },],
+        'width': [{ type: Input },],
+        'height': [{ type: Input },],
+        'data': [{ type: Input },],
+        'label': [{ type: Input },],
+        'gradient': [{ type: Input },],
+        'select': [{ type: Output },],
+    };
     return HeatMapCellComponent;
 }());
 export { HeatMapCellComponent };
-HeatMapCellComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'g[ngx-charts-heat-map-cell]',
-                template: "\n    <svg:g [attr.transform]=\"transform\" class=\"cell\">\n      <defs *ngIf=\"gradient\">\n        <svg:g ngx-charts-svg-linear-gradient\n          orientation=\"vertical\"\n          [name]=\"gradientId\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:rect\n        [attr.fill]=\"gradient ? gradientUrl : fill\"\n        rx=\"3\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        class=\"cell\"\n        style=\"cursor: pointer\"\n        (click)=\"onClick()\"\n      />\n    </svg:g>\n  ",
-                changeDetection: ChangeDetectionStrategy.OnPush
-            },] },
-];
-/** @nocollapse */
-HeatMapCellComponent.ctorParameters = function () { return [
-    { type: ElementRef, },
-    { type: LocationStrategy, },
-]; };
-HeatMapCellComponent.propDecorators = {
-    'fill': [{ type: Input },],
-    'x': [{ type: Input },],
-    'y': [{ type: Input },],
-    'width': [{ type: Input },],
-    'height': [{ type: Input },],
-    'data': [{ type: Input },],
-    'label': [{ type: Input },],
-    'gradient': [{ type: Input },],
-    'select': [{ type: Output },],
-};
 //# sourceMappingURL=heat-map-cell.component.js.map

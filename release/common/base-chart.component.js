@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/debounceTime';
 import { VisibilityObserver } from '../utils';
-var BaseChartComponent = (function () {
+var BaseChartComponent = /** @class */ (function () {
     function BaseChartComponent(chartElement, zone, cd, location) {
         this.chartElement = chartElement;
         this.zone = zone;
@@ -143,28 +143,28 @@ var BaseChartComponent = (function () {
         }
         return results;
     };
+    BaseChartComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'base-chart',
+                    template: "<div></div>"
+                },] },
+    ];
+    /** @nocollapse */
+    BaseChartComponent.ctorParameters = function () { return [
+        { type: ElementRef, },
+        { type: NgZone, },
+        { type: ChangeDetectorRef, },
+        { type: LocationStrategy, },
+    ]; };
+    BaseChartComponent.propDecorators = {
+        'results': [{ type: Input },],
+        'view': [{ type: Input },],
+        'scheme': [{ type: Input },],
+        'schemeType': [{ type: Input },],
+        'customColors': [{ type: Input },],
+        'select': [{ type: Output },],
+    };
     return BaseChartComponent;
 }());
 export { BaseChartComponent };
-BaseChartComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'base-chart',
-                template: "<div></div>"
-            },] },
-];
-/** @nocollapse */
-BaseChartComponent.ctorParameters = function () { return [
-    { type: ElementRef, },
-    { type: NgZone, },
-    { type: ChangeDetectorRef, },
-    { type: LocationStrategy, },
-]; };
-BaseChartComponent.propDecorators = {
-    'results': [{ type: Input },],
-    'view': [{ type: Input },],
-    'scheme': [{ type: Input },],
-    'schemeType': [{ type: Input },],
-    'customColors': [{ type: Input },],
-    'select': [{ type: Output },],
-};
 //# sourceMappingURL=base-chart.component.js.map
