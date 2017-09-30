@@ -88,7 +88,7 @@ export class XAxisComponent implements OnChanges {
   emitTicksHeight({ height }): void {
     const newLabelOffset = height + 25 + 5;
     if (newLabelOffset !== this.labelOffset && this.xOrient === 'top') {
-      this.labelOffset = height;
+      this.labelOffset = newLabelOffset;
       setTimeout(() => {
         this.dimensionsChanged.emit({height});
       }, 0);

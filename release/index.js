@@ -6539,7 +6539,7 @@ var XAxisComponent = /** @class */ (function () {
         var height = _a.height;
         var newLabelOffset = height + 25 + 5;
         if (newLabelOffset !== this.labelOffset && this.xOrient === 'top') {
-            this.labelOffset = height;
+            this.labelOffset = newLabelOffset;
             setTimeout(function () {
                 _this.dimensionsChanged.emit({ height: height });
             }, 0);
