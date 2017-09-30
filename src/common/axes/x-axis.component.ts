@@ -51,7 +51,7 @@ export class XAxisComponent implements OnChanges {
   @Input() labelText;
   @Input() xAxisTickInterval;
   @Input() xAxisTickCount: any;
-  @Input() xOrient: string = 'bottom';
+  @Input() xOrient: string = 'top';
 
   @Output() dimensionsChanged = new EventEmitter();
 
@@ -73,8 +73,12 @@ export class XAxisComponent implements OnChanges {
   }
 
   update(): void {
-    this.transform = `translate(0,${this.xAxisOffset + this.dims.height})`;
-
+    if(this.xOrient === 'top') {
+      this.transform = `translate(0,${this.xAxisOffset})`;
+      this.labelOffset = -65;
+    } else {
+      this.transform = `translate(0,${this.xAxisOffset + this.dims.height})`;
+    }
     if (typeof this.xAxisTickCount !== 'undefined') {
       this.tickArguments = [this.xAxisTickCount];
     }
@@ -82,7 +86,12 @@ export class XAxisComponent implements OnChanges {
 
   emitTicksHeight({ height }): void {
     const newLabelOffset = height + 25 + 5;
-    if (newLabelOffset !== this.labelOffset) {
+    if (newLabelOffset !== this.labelOffset && this.xOrient === 'top') {
+      this.labelOffset = -1 * newLabelOffset;
+      setTimeout(() => {
+        this.dimensionsChanged.emit({height});
+      }, 0);
+    } else if (newLabelOffset !== this.labelOffset) {
       this.labelOffset = newLabelOffset;
       setTimeout(() => {
         this.dimensionsChanged.emit({height});
