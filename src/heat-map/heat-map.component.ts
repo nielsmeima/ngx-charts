@@ -24,6 +24,7 @@ import { ColorHelper } from '../common/color.helper';
         <svg:g ngx-charts-x-axis
           *ngIf="xAxis"
           [xScale]="xScale"
+          [xOrient]="xAxisOrient"
           [dims]="dims"
           [showLabel]="showXAxisLabel"
           [labelText]="xAxisLabel"
@@ -75,6 +76,7 @@ export class HeatMapComponent extends BaseChartComponent {
   @Input() showYAxisLabel;
   @Input() xAxisLabel;
   @Input() yAxisLabel;
+  @Input() xAxisOrient;
   @Input() gradient: boolean;
   @Input() innerPadding: number | number[] = 8;
   @Input() xAxisTickFormatting: any;
