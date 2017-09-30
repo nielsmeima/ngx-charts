@@ -11,7 +11,7 @@ var XAxisComponent = /** @class */ (function () {
         this.stroke = 'stroke';
         this.tickStroke = '#ccc';
         this.strokeWidth = 'none';
-        this.xAxisOffset = 5;
+        this.xAxisOffset = -5;
     }
     XAxisComponent.prototype.ngOnChanges = function (changes) {
         this.update();
