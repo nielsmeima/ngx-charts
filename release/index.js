@@ -6525,7 +6525,7 @@ var XAxisComponent = /** @class */ (function () {
     XAxisComponent.prototype.update = function () {
         if (this.xOrient === 'top') {
             this.transform = "translate(0," + this.xAxisOffset + ")";
-            this.labelOffset = -65;
+            this.labelOffset = 65;
         }
         else {
             this.transform = "translate(0," + (this.xAxisOffset + this.dims.height) + ")";

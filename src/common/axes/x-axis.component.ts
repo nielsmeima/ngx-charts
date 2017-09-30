@@ -75,10 +75,11 @@ export class XAxisComponent implements OnChanges {
   update(): void {
     if(this.xOrient === 'top') {
       this.transform = `translate(0,${this.xAxisOffset})`;
-      this.labelOffset = -65;
+      this.labelOffset = 65;
     } else {
       this.transform = `translate(0,${this.xAxisOffset + this.dims.height})`;
     }
+
     if (typeof this.xAxisTickCount !== 'undefined') {
       this.tickArguments = [this.xAxisTickCount];
     }
