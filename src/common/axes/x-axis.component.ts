@@ -59,12 +59,12 @@ export class XAxisComponent implements OnChanges {
 
   tickArguments: any;
   transform: any;
-  labelOffset: number = 0;
+  labelOffset: number = 15;
   fill: string = 'none';
   stroke: string = 'stroke';
   tickStroke: string = '#ccc';
   strokeWidth: string = 'none';
-  xAxisOffset: number = -5;
+  xAxisOffset: number = -30;
 
   @ViewChild(XAxisTicksComponent) ticksComponent: XAxisTicksComponent;
 
