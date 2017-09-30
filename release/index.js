@@ -6512,19 +6512,19 @@ var XAxisComponent = /** @class */ (function () {
         this.xOrient = 'bottom';
         this.dimensionsChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.xAxisClassName = 'x axis';
-        this.labelOffset = 15;
+        this.labelOffset = 0;
         this.fill = 'none';
         this.stroke = 'stroke';
         this.tickStroke = '#ccc';
         this.strokeWidth = 'none';
-        this.xAxisOffset = -30;
+        this.xAxisOffset = 5;
     }
     XAxisComponent.prototype.ngOnChanges = function (changes) {
         this.update();
     };
     XAxisComponent.prototype.update = function () {
         if (this.xOrient === 'top') {
-            this.transform = "translate(0," + this.xAxisOffset + ")";
+            this.transform = "translate(0," + this.xAxisOffset + " - 35)";
             this.labelOffset = 65;
         }
         else {
